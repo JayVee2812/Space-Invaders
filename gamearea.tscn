@@ -1,0 +1,196 @@
+[gd_scene load_steps=12 format=3 uid="uid://d0xn7kq6wxs84"]
+
+[ext_resource type="PackedScene" uid="uid://ctkrpvichwa7r" path="res://player.tscn" id="1_8fdue"]
+[ext_resource type="Script" path="res://gamearea.gd" id="1_j2tub"]
+[ext_resource type="Texture2D" uid="uid://dgedj23abhf0l" path="res://blue.png" id="1_natus"]
+[ext_resource type="PackedScene" uid="uid://dokb8njxctdhb" path="res://enemy.tscn" id="5_rxwyn"]
+[ext_resource type="Script" path="res://enemy_unit.gd" id="5_sjqt7"]
+[ext_resource type="Script" path="res://right.gd" id="6_tdc4j"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_h4i8f"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_k338q"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_36tr0"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_mb5h0"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_hutm7"]
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_j2tub")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+z_index = 1
+position = Vector2(960, 539)
+
+[node name="Player" parent="." instance=ExtResource("1_8fdue")]
+position = Vector2(557, 1041)
+disable_mode = 1
+
+[node name="Blue" type="Sprite2D" parent="."]
+modulate = Color(0.137255, 0.0862745, 0.282353, 1)
+position = Vector2(957, 534)
+scale = Vector2(2.2, 2.2)
+texture = ExtResource("1_natus")
+
+[node name="Ground" type="StaticBody2D" parent="." groups=["Wall"]]
+z_index = 1
+position = Vector2(563, 649)
+
+[node name="Floor" type="CollisionShape2D" parent="Ground"]
+position = Vector2(0, 435)
+shape = SubResource("WorldBoundaryShape2D_h4i8f")
+
+[node name="EnemyUnit" type="CharacterBody2D" parent="."]
+position = Vector2(-170, 0)
+script = ExtResource("5_sjqt7")
+
+[node name="EnemyArea" type="Area2D" parent="EnemyUnit"]
+
+[node name="Enemies" type="Node2D" parent="EnemyUnit/EnemyArea"]
+
+[node name="Enemy10" parent="EnemyUnit/EnemyArea/Enemies" instance=ExtResource("5_rxwyn")]
+position = Vector2(1610, 181)
+
+[node name="Enemy20" parent="EnemyUnit/EnemyArea/Enemies" instance=ExtResource("5_rxwyn")]
+position = Vector2(268, 381)
+
+[node name="Enemy21" parent="EnemyUnit/EnemyArea/Enemies" instance=ExtResource("5_rxwyn")]
+position = Vector2(418, 381)
+
+[node name="Enemy22" parent="EnemyUnit/EnemyArea/Enemies" instance=ExtResource("5_rxwyn")]
+position = Vector2(567, 381)
+
+[node name="Enemy23" parent="EnemyUnit/EnemyArea/Enemies" instance=ExtResource("5_rxwyn")]
+position = Vector2(716, 381)
+
+[node name="Enemy24" parent="EnemyUnit/EnemyArea/Enemies" instance=ExtResource("5_rxwyn")]
+position = Vector2(865, 381)
+
+[node name="Enemy25" parent="EnemyUnit/EnemyArea/Enemies" instance=ExtResource("5_rxwyn")]
+position = Vector2(1014, 381)
+
+[node name="Enemy26" parent="EnemyUnit/EnemyArea/Enemies" instance=ExtResource("5_rxwyn")]
+position = Vector2(1163, 381)
+
+[node name="Enemy27" parent="EnemyUnit/EnemyArea/Enemies" instance=ExtResource("5_rxwyn")]
+position = Vector2(1312, 381)
+
+[node name="Enemy28" parent="EnemyUnit/EnemyArea/Enemies" instance=ExtResource("5_rxwyn")]
+position = Vector2(1461, 381)
+
+[node name="Enemy29" parent="EnemyUnit/EnemyArea/Enemies" instance=ExtResource("5_rxwyn")]
+position = Vector2(1610, 381)
+
+[node name="Enemy11" parent="EnemyUnit/EnemyArea/Enemies" instance=ExtResource("5_rxwyn")]
+position = Vector2(343, 281)
+
+[node name="Enemy12" parent="EnemyUnit/EnemyArea/Enemies" instance=ExtResource("5_rxwyn")]
+position = Vector2(492, 281)
+
+[node name="Enemy13" parent="EnemyUnit/EnemyArea/Enemies" instance=ExtResource("5_rxwyn")]
+position = Vector2(641, 281)
+
+[node name="Enemy14" parent="EnemyUnit/EnemyArea/Enemies" instance=ExtResource("5_rxwyn")]
+position = Vector2(790, 281)
+
+[node name="Enemy15" parent="EnemyUnit/EnemyArea/Enemies" instance=ExtResource("5_rxwyn")]
+position = Vector2(939, 281)
+
+[node name="Enemy16" parent="EnemyUnit/EnemyArea/Enemies" instance=ExtResource("5_rxwyn")]
+position = Vector2(1088, 281)
+
+[node name="Enemy17" parent="EnemyUnit/EnemyArea/Enemies" instance=ExtResource("5_rxwyn")]
+position = Vector2(1237, 281)
+
+[node name="Enemy18" parent="EnemyUnit/EnemyArea/Enemies" instance=ExtResource("5_rxwyn")]
+position = Vector2(1386, 281)
+
+[node name="Enemy19" parent="EnemyUnit/EnemyArea/Enemies" instance=ExtResource("5_rxwyn")]
+position = Vector2(1535, 281)
+
+[node name="Enemy30" parent="EnemyUnit/EnemyArea/Enemies" instance=ExtResource("5_rxwyn")]
+position = Vector2(343, 478)
+
+[node name="Enemy31" parent="EnemyUnit/EnemyArea/Enemies" instance=ExtResource("5_rxwyn")]
+position = Vector2(492, 478)
+
+[node name="Enemy32" parent="EnemyUnit/EnemyArea/Enemies" instance=ExtResource("5_rxwyn")]
+position = Vector2(641, 478)
+
+[node name="Enemy33" parent="EnemyUnit/EnemyArea/Enemies" instance=ExtResource("5_rxwyn")]
+position = Vector2(790, 478)
+
+[node name="Enemy34" parent="EnemyUnit/EnemyArea/Enemies" instance=ExtResource("5_rxwyn")]
+position = Vector2(939, 478)
+
+[node name="Enemy35" parent="EnemyUnit/EnemyArea/Enemies" instance=ExtResource("5_rxwyn")]
+position = Vector2(1088, 478)
+
+[node name="Enemy36" parent="EnemyUnit/EnemyArea/Enemies" instance=ExtResource("5_rxwyn")]
+position = Vector2(1237, 478)
+
+[node name="Enemy37" parent="EnemyUnit/EnemyArea/Enemies" instance=ExtResource("5_rxwyn")]
+position = Vector2(1386, 478)
+
+[node name="Enemy38" parent="EnemyUnit/EnemyArea/Enemies" instance=ExtResource("5_rxwyn")]
+position = Vector2(1535, 478)
+
+[node name="Enemy" parent="EnemyUnit/EnemyArea/Enemies" instance=ExtResource("5_rxwyn")]
+position = Vector2(268, 181)
+
+[node name="Enemy2" parent="EnemyUnit/EnemyArea/Enemies" instance=ExtResource("5_rxwyn")]
+position = Vector2(418, 181)
+
+[node name="Enemy3" parent="EnemyUnit/EnemyArea/Enemies" instance=ExtResource("5_rxwyn")]
+position = Vector2(567, 181)
+
+[node name="Enemy4" parent="EnemyUnit/EnemyArea/Enemies" instance=ExtResource("5_rxwyn")]
+position = Vector2(716, 181)
+
+[node name="Enemy5" parent="EnemyUnit/EnemyArea/Enemies" instance=ExtResource("5_rxwyn")]
+position = Vector2(865, 181)
+
+[node name="Enemy6" parent="EnemyUnit/EnemyArea/Enemies" instance=ExtResource("5_rxwyn")]
+position = Vector2(1014, 181)
+
+[node name="Enemy7" parent="EnemyUnit/EnemyArea/Enemies" instance=ExtResource("5_rxwyn")]
+position = Vector2(1163, 181)
+
+[node name="Enemy8" parent="EnemyUnit/EnemyArea/Enemies" instance=ExtResource("5_rxwyn")]
+position = Vector2(1312, 181)
+
+[node name="Enemy9" parent="EnemyUnit/EnemyArea/Enemies" instance=ExtResource("5_rxwyn")]
+position = Vector2(1461, 181)
+
+[node name="Killzone" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Killzone"]
+z_index = 1
+position = Vector2(873, 851)
+shape = SubResource("WorldBoundaryShape2D_k338q")
+
+[node name="Boundry" type="Area2D" parent="." groups=["Wall"]]
+
+[node name="Left" type="CollisionShape2D" parent="Boundry"]
+z_index = 1
+position = Vector2(0, 649)
+rotation = 1.5708
+shape = SubResource("WorldBoundaryShape2D_36tr0")
+
+[node name="Right" type="CollisionShape2D" parent="Boundry" groups=["Wall"]]
+z_index = 1
+position = Vector2(1921, 649)
+rotation = -1.5708
+shape = SubResource("WorldBoundaryShape2D_mb5h0")
+script = ExtResource("6_tdc4j")
+
+[node name="Roof" type="CollisionShape2D" parent="Boundry" groups=["Wall"]]
+position = Vector2(727, 0)
+rotation = -3.14159
+shape = SubResource("WorldBoundaryShape2D_hutm7")
+
+[node name="Node2D" type="Node2D" parent="Boundry"]
+
+[connection signal="area_entered" from="EnemyUnit/EnemyArea" to="EnemyUnit" method="_on_enemy_area_area_entered"]
